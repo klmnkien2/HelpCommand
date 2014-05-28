@@ -17,12 +17,6 @@ grant dba to HSCV_THA;
 
 CREATE DIRECTORY DMPDIR as '/u02/dmpdir'; //create directory for importdb/exportdb
 
-SELECT NAME, FILE#, STATUS, CHECKPOINT_CHANGE# "CHECKPOINT" FROM   V$DATAFILE;
-  
-ALTER TABLESPACE users  ADD DATAFILE '/u01/oradata/qlcb/users02.dbf' SIZE 8000M;
-      AUTOEXTEND ON
-      NEXT 512K
-      MAXSIZE 250M;
       
 select file_id,file_name from dba_data_files where tablespace_name='USERS';
 alter database datafile 4 autoextend on maxsize unlimited;
