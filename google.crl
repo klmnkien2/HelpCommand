@@ -1,0 +1,15 @@
+I need to know if it would be possible to do some crawling to automatically spot sites that were recently blacklisted by google (after bieng hacked, or having done black seo or other). 
+
+Here's a link example I found: 
+http://safebrowsing.clients.google.com/safebrowsing/diagnostic?&hl=en&site=AS:24600 
+
+Maybe then by changing 24600 with other numbers ?
+
+Here's an example of a blacklisted site:
+
+http://safebrowsing.clients.google.com/safebrowsing/diagnostic?site=http%3A%2F%2Fampalascortes.eu5.org%2F&client=googlechrome&hl=en
+
+As you can see this page (and all similar ones) link to other pages that were potentially hacked or blacklisted.
+
+What I'd like to have is a system that would crawl these pages and to receive every day an export of the sites that were blacklisted by google (it doesn't have to be hundreds...if it's 5-10 it's perfectly fine)
+And what would be even better would be to automatically generate the contact email / phone number of the company or person who owns the site.
