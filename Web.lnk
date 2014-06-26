@@ -3,5 +3,6 @@ http://simplehtmldom.sourceforge.net/manual.htm
 
 =======ANDROID LIBS=======
 http://square.github.io/picasso/
-https://github.com/wordpress-mobile/Android-PasscodeLock
-https://code.google.com/p/libgdx/wiki/AdMobInLibgdx
+https://github.com/wordpress-mobile/Android-PasscodeLock //android passcode lock screen
+https://code.google.com/p/libgdx/wiki/AdMobInLibgdx //admob banner in libgdx
+https://github.com/libgdx/libgdx/wiki/Take-a-Screenshot //take screenshot in libgdx
