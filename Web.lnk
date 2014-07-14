@@ -14,3 +14,8 @@ http://rotatingcanvas.com/tutorials-index/
 
 =======CAR PAGE=======
 http://www.nitrotype.com/race
+
+=======Background service=======
+https://github.com/commonsguy/cw-android/tree/master/Notifications/FakePlayer
+https://github.com/supercurio/foreground-service-sample-app
+http://stackoverflow.com/questions/15292779/create-new-intent-in-background
