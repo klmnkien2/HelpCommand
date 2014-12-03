@@ -1,0 +1,2 @@
+---Mysql import command
+C:\xampp\mysql\bin\mysql.exe -u root oep < E:\lifefray\Data-Model-master\db-create-scripts\oep_db_data.sql
