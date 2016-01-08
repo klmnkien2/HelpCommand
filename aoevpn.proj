@@ -1,3 +1,4 @@
+-------VPN------------
 AccountList
 AccountCreate [name] [/SERVER:hostname:port] [/HUB:hubname] [/USERNAME:username] [/NICNAME:nicname]
 AccountSet [name] [/SERVER:hostname:port] [/HUB:hubname]
@@ -12,3 +13,11 @@ AccountDisconnect
 AccountStatusGet [name]
 
 vpncmd [host:port] [/CLIENT|/SERVER|/TOOLS] [/Hub:hub] [/ADMINHUB:adminhub] [/PASSWORD:password] [/IN:infile] [/OUT:outfile] [/CMD commands...]
+
+----------C#---------------
+Close form from another thread
+this.Invoke((MethodInvoker) delegate
+{
+    // close the form on the forms thread
+    this.Close();
+});
