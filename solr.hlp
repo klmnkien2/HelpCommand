@@ -1,0 +1,8 @@
+Solr search Location type
+fl = field list
+fq = field query
+pt = point of location {lat,lon}
+d = distance (from point)
+
+Full query:
+[code]http://54.64.83.87:8080/solr/building/select?wt=json&indent=true&q=*:*&fl=building_id&fq={!geofilt}&sfield=location&pt=36.146282,139.3922&d=5&sort=geodist()%20asc[/code]
