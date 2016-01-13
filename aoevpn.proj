@@ -1,2 +1,58 @@
-Custom listbox
-http://www.blackbeltcoder.com/Articles/controls/owner-drawn-controls
+-------------MODEL---------------
+public function createMessage($message) {
+        try {
+            $sql = "INSERT INTO messages (user_id, user_name, room_id, notify, message_format, message)
+                    VALUES (:user_id, :user_name, :room_id, :notify, :message_format, :message)";
+            $stmt = $this->core->dbh->prepare($sql);
+            if ($stmt->execute($message)) {
+                return $this->core->dbh->lastInsertId();
+            } else {
+                return null;
+            }
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            return null;
+        }
+    }
+
+    public function lastestMessageByRoom($room_id, $limit) {
+        $r = array();
+
+        $sql = "SELECT *
+        	FROM messages m
+        	WHERE m.room_id = :room_id
+            ORDER BY create_time
+            LIMIT $limit";
+        $stmt = $this->core->dbh->prepare($sql);
+        $stmt->bindParam(':room_id', $room_id, PDO::PARAM_INT);
+
+        if ($stmt->execute()) {
+            $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        return $r;
+    }
+    
+---------------CONTROLLER------------------
+public function messageAction()
+    {
+        // reads multiple params only if they are POST
+        $message = $this->params(
+            array('room_id', 'user_id', 'user_name', 'notify', 'message_format', 'message'), 
+            'post', 
+            array(
+                'room_id' => 0,
+                'user_id' => 0,
+                'notify' => 0,
+                'message_format' => 'html',
+                'user_name' => '',
+                'message' => ''
+            )
+        );
+
+        $result = $this->model->createMessage($message);
+        if ($result) {
+            $this->echoRespnse(200, array('status' => 'sent'));
+        } else {
+            $this->echoRespnse(400, array('status' => 'error'));
+        }
+    }
