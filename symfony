@@ -1,0 +1,23 @@
+Setup resources link
+php app/console assetic:dump --env=prod --no-debug
+php app/console assets:install --symlink
+
+Generate entity:
+php app/console doctrine:mapping:import --force NextArchiveBundle yml
+php app/console doctrine:mapping:convert annotation src --force
+php app/console doctrine:generate:entities NextArchiveBundle --no-backup
+
+Delete SOLR
+http://54.64.83.87:8080/solr/dwelling/update?stream.body=%3Cdelete%3E%3Cquery%3E*:*%3C/query%3E%3C/delete%3E&commit=true
+
+Solr search Location type
+fl = field list
+fq = field query
+pt = point of location {lat,lon}
+d = distance (from point)
+
+Full query:
+http://54.64.83.87:8080/solr/building/select?wt=json&indent=true&q=*:*&fl=building_id&fq={!geofilt}&sfield=location&pt=36.146282,139.3922&d=5&sort=geodist()%20asc
+
+Solr running command 
+ nohup php unit_indexing_all.php > unit_process.log 2>&1 &
