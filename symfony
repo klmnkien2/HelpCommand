@@ -21,3 +21,7 @@ http://54.64.83.87:8080/solr/building/select?wt=json&indent=true&q=*:*&fl=buildi
 
 Solr running command 
  nohup php unit_indexing_all.php > unit_process.log 2>&1 &
+ 
+ 
+# Admin Panel Bundles 
+https://github.com/symfony2admingenerator/AdmingeneratorGeneratorBundle/blob/master/Resources/doc/documentation.md#7-cookbook
