@@ -1,2 +1,3 @@
----Mysql import command
+---Mysql import/export command
 C:\xampp\mysql\bin\mysql.exe -u root oep < E:\lifefray\Data-Model-master\db-create-scripts\oep_db_data.sql
+mysqldump -u root -p zonauction > zonauction.sql
